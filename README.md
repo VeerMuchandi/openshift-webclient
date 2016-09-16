@@ -6,7 +6,7 @@ Check this link for more info on how to enable privilaged mode https://github.co
 ## openshift-webclient setup
 ```sh
 oc new-project cli
-oc new-build https://github.com/debianmaster/openshift-webclient --strategy=docker --name=webconsole
+oc new-build https://github.com/veermuchandi/openshift-webclient --strategy=docker --name=webconsole
 oc new-app webconsole --name=webcli
 ```
 > multiple
@@ -39,14 +39,14 @@ oc project web
 
 for i in {0..10} ; 
 do 
-oc new-app debianmaster/ose-client:v8 --name=user0$i
+oc new-app veermuchandi/ose-client:v8 --name=user0$i
 oc expose svc/user0$i
 sleep 1
 done;
 
 for i in {10..40} ; 
 do 
-oc new-app debianmaster/ose-client:v8 --name=user$i
+oc new-app veermuchandi/ose-client:v8 --name=user$i
 oc expose svc/user$i
 sleep 1
 done;
